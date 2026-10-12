@@ -1,4 +1,4 @@
-# Git practice by role A
+# Git practice by roles A and B
 
 ## Usage
 Run python src/main.py.
