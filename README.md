@@ -41,8 +41,14 @@ error, and 2 means an argument error. The [test plan](docs/test-plan.md) explain
 - [Git command reference](docs/git-command-reference.md) and [practical checklist](docs/practical-checklist.md)
 - [Data format](docs/data-format.md) and [maintenance](docs/maintenance.md)
 - [Thirty-change review guide](docs/commit-log.md)
-- [Later three-conflict plan](docs/conflict-plan.md), still awaiting its own practical session
+- [Three completed conflict resolutions](practicals/git/README.md)
 
 The repository contains original study notes based on the supplied course PDFs. It does not redistribute
-the lecture PDFs. The 30 new commits supplement the initial README commit; the later conflict and
-pair-work exercises remain separate tasks. No license has been selected.
+the lecture PDFs. The earlier commit-count task added 30 commits to the initial README commit.
+The dedicated Git practical has now been executed; see its report below. No license has been selected.
+
+## Completed Git practical
+
+The dedicated ten-task Git practical has been executed. [Open its project](https://github.com/SaytomoMotion/software-implementation-and-maintenance-life-cycle-and-process-automation/tree/git-practice/main)
+and [read the evidence report](practicals/git/README.md). Three real conflicts were resolved and pushed.
+Task 10's Git mechanics used two simulated working copies; a real classmate did not participate.

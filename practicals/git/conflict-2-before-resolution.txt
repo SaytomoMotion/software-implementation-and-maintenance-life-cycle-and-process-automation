@@ -1,0 +1,8 @@
+<<<<<<< HEAD
+# Git practice by role A
+=======
+# Git practice by role B
+>>>>>>> origin/git-practice/feature/readme-b
+
+## Usage
+Run python src/main.py.

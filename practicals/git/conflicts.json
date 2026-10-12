@@ -1,0 +1,32 @@
+[
+  {
+    "number": 1,
+    "file": "src/main.py",
+    "branch": "feature/message",
+    "main_tip": "94ae4257089b2a86137fd05c3556bed2bdfb771e",
+    "feature_tip": "ceb77980e4097b89613c046e50ce42362c434c3b",
+    "resolution_commit": "ddabf2d4584e96833d6be73aa28c069eb54a664c",
+    "marker_file": "conflict-1-before-resolution.txt",
+    "explanation": "combine the greeting into the course message"
+  },
+  {
+    "number": 2,
+    "file": "README.md",
+    "branch": "origin/git-practice/feature/readme-b",
+    "main_tip": "65bd8bc9020ed49f6b8dcd1f5dda31b845957a1f",
+    "feature_tip": "2b06a31bae2af48778e9551ffe1029ea539ccc16",
+    "resolution_commit": "6269a28507a000bab2ea1810e0133d71769ff2ff",
+    "marker_file": "conflict-2-before-resolution.txt",
+    "explanation": "retain both simulated roles in the README title"
+  },
+  {
+    "number": 3,
+    "file": "config.txt",
+    "branch": "feature/config",
+    "main_tip": "e57c5b5e024034bd3452aa5d989dc87b06e492ca",
+    "feature_tip": "ef8e2928fc3d9d4c3fc6ea72f7f0dd7189021f67",
+    "resolution_commit": "9a13e4ff0f157c55941ecaaa1001840717de1837",
+    "marker_file": "conflict-3-before-resolution.txt",
+    "explanation": "keep the practice environment in development mode"
+  }
+]
