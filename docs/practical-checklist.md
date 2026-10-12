@@ -1,24 +1,9 @@
-# Practical session checklist
+# Git practical status
 
-Source: `git_practical_session_v2_english_stundents.pdf` from the supplied archive.
-These are exercise requirements. The checklist does not claim they have been performed.
+See [the completed practical report](../practicals/git/README.md) for the task-by-task evidence.
+Tasks 1-9 are complete. Task 10's Git operations are complete using two independent working copies;
+actual participation by a second student has not been performed. Three real conflicts were resolved,
+verified and published to the git-practice/main branch and related feature branches.
 
-| Task | Required activity | Evidence to collect |
-| --- | --- | --- |
-| 1 | Local git-practice repository, README and first commit | Untracked, staged, then clean status |
-| 2 | Commit and edit src/main.py | Difference between unstaged and staged diff |
-| 3 | Separate README/app from config/notes commits | First commit includes only its intended files |
-| 4 | Restore broken code and unstage README | Code restored; README edit retained unstaged |
-| 5 | Ignore .env, logs and build/ | Only .gitignore enters that commit |
-| 6 | feature/greeting branch | Different file contents on the two branches |
-| 7 | Merge greeting into main | History graph and merged file |
-| 8 | Intentional code conflict and manual resolution | Conflict markers, resolution and history |
-| 9 | Remote push, fetch and pull --ff-only | Correct origin and upstream tracking |
-| 10 | Pair branches, merge files, then README conflict | Both contributions and resolved overlapping edit |
-
-The earlier verbal task asks for 30 commits and later three conflicts. The PDFs do not specify
-that count. Keep both requirements visible and confirm course submission expectations with the lecturer.
-The Git lecture additionally asks for a small branch, 2-3 logical commits, a PR and a tested conflict.
-
-The original local practice uses src/main.py. This tasktracker application is a separate small
-course project, not a claim that its file structure exactly follows the practical's example.
+The 30-commit exercise completed earlier was separate from this practical. The Git lecture's PR exercise
+and other presentation exercises are also separate from the dedicated Git practical-session guide.

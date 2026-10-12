@@ -1,7 +1,7 @@
 # Commit plan and review guide
 
 These 30 new changes build a small task tracker and supporting course documentation.
-The initial GitHub README commit predates them, so the finished repository has 31 commits in total.
+The initial GitHub README commit predates them. At the end of this commit-count task, main had 31 commits; later practical work is recorded separately.
 Each listed change has its own commit; verification uses the actual Git history rather than this list alone.
 
 1. `chore: exclude local task data and generated Python files` — `.gitignore`
