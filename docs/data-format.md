@@ -1,28 +1,24 @@
-# Data format
+# Project data
 
-The file is UTF-8 JSON containing exactly schema_version and tasks. Version 1 is an integer.
-Each task has exactly id, title and completed. IDs are unique canonical lowercase UUID strings,
-titles are trimmed text of 1-200 characters without control characters, and completed is boolean.
+Default file: data/motion-projects.sqlite3. Schema version: SQLite PRAGMA user_version.
 
-```json
-{
-  "schema_version": 1,
-  "tasks": [
-    {
-      "id": "12345678-1234-4234-8234-123456789abc",
-      "title": "Read lecture 0",
-      "completed": false
-    }
-  ]
-}
-```
+| Field | Meaning |
+| --- | --- |
+| id | Canonical UUID, retained on legacy import |
+| title | 1–200 characters |
+| client | 1–120 characters; imported tasks use Unassigned |
+| brief | Optional, up to 4,000 characters; newlines allowed |
+| deadline | Optional valid YYYY-MM-DD date |
+| status | briefing, in_progress, review, delivered or on_hold |
+| revision_limit | Agreed rounds, default 2 |
+| revision_count | Used rounds, default 0 |
+| delivery_formats | JSON array stored as text, default MP4 |
 
-A missing file means an empty list. Malformed data or an unsupported version produces an error.
-The program must not replace it with an empty list. Preserve the original before investigating.
+Formats: mp4, mov, gif, webm and png-sequence. Duplicate selections are removed.
+Revision values are integers from 0 to 1,000,000. Extra rounds require --allow-extra.
+Overdue comparisons use the computer's local calendar date. Delivered projects are not overdue.
 
-Saving writes and flushes a temporary file beside the destination, then replaces the destination.
-This prevents a partial destination write. It is not a multi-process lock or a complete guarantee
-against all hardware failures. Only one writer should use a data file at a time.
-
-For a future schema change, design an explicit migration, backup first, test old records and
-verify the result before switching readers. Do not infer a migration just from the version number.
+The old JSON format has schema_version 1 and tasks with exactly id, title and completed.
+Import keeps IDs and titles and maps completed to delivered, otherwise briefing. No real client
+or deadline is inferred. The original JSON is unchanged.
+The JSON version and SQLite schema version are separate versioning systems.

@@ -1,15 +1,19 @@
 # Architecture
 
-The CLI parses arguments and prints results. TaskService implements add, list and complete use cases.
-Task owns validated immutable values. JsonStore converts validated records into a versioned JSON file.
-Validation rules are shared instead of repeated at each boundary.
+The CLI parses commands and formats output. ProjectService provides project operations and filters.
+The immutable Project model validates text, calendar dates, status, formats and revision values.
+ProjectStore persists values through parameterized SQLite queries.
 
-Data flows from CLI arguments to service methods, into the model and store, then back as task values.
-The service accepts a store object with load/save operations. Tests use an in-memory substitute;
-the application uses JsonStore. Business behavior therefore does not depend on terminal formatting.
+Numbered SQL migrations run in one explicit transaction. SQLite's user_version records the schema.
+Existing databases are backed up first. Scripts are read through package resources, so they also
+work inside the packaged .pyz application.
 
-Completion returns a replacement Task, retaining its ID and title. No operation mutates an existing
-Task. Storage validation rejects unknown fields and duplicate IDs so invalid files do not look valid.
+Revision recording uses a conditional SQL update that checks the current budget in the database.
+An explicit extra-round option can exceed the budget. Both revision count and status update together.
 
-The layers are intentionally small. A network API, database and dependency-injection framework would
-add complexity without serving the present single-user requirements.
+Legacy import validates the entire input before opening the database, then inserts in a transaction.
+Existing IDs are skipped. The original tasktracker package supplies legacy validation and remains
+runnable for old JSON files.
+
+The build packages Python and SQL resources with source revision metadata and a checksum.
+Local databases and credentials are excluded. Everything uses Python's standard library.

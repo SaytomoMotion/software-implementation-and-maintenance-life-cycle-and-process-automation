@@ -6,3 +6,7 @@ __pycache__/
 data/
 build/
 dist/
+*.sqlite3*
+*.db
+*.db-*
+*.db.*.bak
