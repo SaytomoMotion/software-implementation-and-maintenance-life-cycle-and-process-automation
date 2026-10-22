@@ -31,7 +31,8 @@ unnecessary personal data. Severity differs from alert routing. Plan retention, 
 
 ## Application to this repository
 
-The tracker has no external packages or database migration requirement. It declares a Python version,
-documents the JSON schema and isolates data behind a store. Local command errors provide a small
-diagnostic baseline; they are not a claim of full production telemetry. Future schema versions must be
-handled explicitly rather than silently resetting data.
+The motion design tracker uses SQLite with numbered migrations. Schema 2 adds revision budgets
+and delivery formats to existing project records, with an automatic backup and transactional rollback.
+The app validates input and uses parameterized SQL. Its build contains the SQL resources and source
+revision metadata. The legacy task JSON can be imported without changing the original file.
+See [migration examples](migrations.md) and [automation](automation.md).
