@@ -26,7 +26,7 @@
    and `git pull --ff-only` to check synchronization and upstream tracking.
 
 The local main branch is published as `git-practice/main` to keep the exercise separate from the
-task-tracker project on the repository's default branch. Related remote branches use `git-practice/` too.
+motion design project on the repository's default branch. Related remote branches use `git-practice/` too.
 
 ## Task 10: two working copies
 

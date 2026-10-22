@@ -1,24 +1,22 @@
 # Test plan
 
-Run from the repository root:
+Run python -m unittest discover -s tests -v from the repository root.
 
-```text
-python -m compileall -q tasktracker tests
-python -m unittest discover -s tests -v
-```
-
-| Risk | Verification |
+| Risk | Check |
 | --- | --- |
-| Blank, oversized or terminal-control title | Validation boundary and rejection tests |
-| Invalid task fields or completion type | Model record validation tests |
-| State lost between commands | Separate-process lifecycle test |
-| Corrupt data silently overwritten | Storage corruption-preservation test |
-| Unsupported schema or duplicate IDs accepted | Storage schema tests |
-| Failed replacement destroys previous data | Mocked replacement failure and cleanup test |
-| Completion changes identity or creates duplicates | Model and service idempotence tests |
-| Filtering returns the wrong tasks | Service and CLI status tests |
-| CLI failure looks successful | Nonzero status and safe stderr tests |
+| Bad title, client, date, status or format | Model and CLI rejection tests |
+| Lost briefs, formats or status | SQLite persistence and separate process tests |
+| Exceeded revision budget | Conditional update, explicit override and two-connection checks |
+| Wrong overdue results | Fixed dates, including delivered projects |
+| Migration loses records | Version-1 fixture, preserved fields and default values |
+| Unusable backup | Open backup and verify original schema and row |
+| Partially applied migration | Inject failure after ALTER TABLE; verify rollback |
+| Unsupported database changed | Future and unversioned databases retain original bytes |
+| Dry run writes data | Filesystem and schema checks |
+| Legacy import changes source or duplicates work | Byte comparison and repeated import |
+| Partial import | Validation and trigger-induced rollback |
+| Unstable build | Byte and checksum comparison |
+| Package lacks SQL or depends on checkout | Packaged app run from an isolated directory |
 
-The suite does not prove concurrent writes, hardware crash durability or every operating-system
-permission failure. These remain outside the scope. CI repeats the same commands on Linux;
-local checks also exercise the code on the development platform.
+Legacy task-tracker tests remain for compatibility. All test projects use synthetic clients and
+temporary files. No production deployment, rendering, payment or multi-user stress test is claimed.

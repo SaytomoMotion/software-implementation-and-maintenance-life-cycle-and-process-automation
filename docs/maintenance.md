@@ -1,18 +1,16 @@
 # Maintenance
 
-Keep local task data under ignored data/ or provide an explicit --data path. Do not use real secrets
-as task titles. The application has no secret configuration, network access or login requirement.
-The --data option is ordinary configuration; source logic is code; task records are application data.
+Keep real client records in ignored data/ files. SQLite databases, generated backups and build
+outputs are excluded from Git. Never put client secrets in briefs or commit real client records.
 
-For an invalid JSON file, stop edits, preserve a copy, investigate its schema and restore a known-good
-backup. For a write error, check directory access and disk availability. Errors avoid printing stored titles.
-After restoring a backup, use list --json to verify records and confirm completion states.
+Before upgrading important data, stop other writers and use migrate --dry-run. Upgrades from
+version 1 create a SQLite backup before changing the schema. Copy important backups to a separate
+backup location; files on the same disk do not protect against disk failure.
 
-Make backups when no writer is running. Test a restore in a separate temporary location using
---data before trusting the backup. A backup that has not been restored successfully is unverified.
+Rehearse recovery at a separate path. Inspect a restored file using migrate --dry-run, then
+upgrade it and compare IDs, briefs and statuses. Preserve the original during investigation.
+Do not manually change user_version to bypass a schema error. Check the app version that wrote
+the file. For lock or write errors, resolve competing writers or filesystem access first.
 
-For a published code regression, identify the introducing change, add a regression test and create a fix
-or a reviewed revert. Run the suite before publishing. Preserve shared history rather than rewriting it.
-
-There is no production service or defined recovery-time objective here. Set those requirements before
-claiming production readiness. Keep runtime updates small and rerun the suite on the declared version.
+Run tests and the migration demo before publishing code changes. Record artifact checksums and
+source commits. Revision budgets do not create invoices or authorize charges; billing is separate.
