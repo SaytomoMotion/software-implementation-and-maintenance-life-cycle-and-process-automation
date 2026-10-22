@@ -47,8 +47,8 @@ The repository contains original study notes based on the supplied course PDFs. 
 the lecture PDFs. The earlier commit-count task added 30 commits to the initial README commit.
 The dedicated Git practical has now been executed; see its report below. No license has been selected.
 
-## Completed Git practical
+## Git practical
 
-The dedicated ten-task Git practical has been executed. [Open its project](https://github.com/SaytomoMotion/software-implementation-and-maintenance-life-cycle-and-process-automation/tree/git-practice/main)
-and [read the evidence report](practicals/git/README.md). Three real conflicts were resolved and pushed.
-Task 10's Git mechanics used two simulated working copies; a real classmate did not participate.
+[Open the practice project](https://github.com/SaytomoMotion/software-implementation-and-maintenance-life-cycle-and-process-automation/tree/git-practice/main) or read the [lab report](practicals/git/README.md).
+Tasks 1–9 are complete, with three resolved conflicts in the published history.
+Task 10 uses two working copies to simulate the pair-work operations; no second student participated.
