@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "tasks": [
+    {
+      "id": "12345678-1234-4234-8234-123456789abc",
+      "title": "Brand logo intro",
+      "completed": false
+    },
+    {
+      "id": "87654321-4321-4321-8321-abcdef123456",
+      "title": "Social media loop",
+      "completed": true
+    }
+  ]
+}
