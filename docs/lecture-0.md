@@ -14,7 +14,7 @@ Automation is useful for a process with understood inputs, outputs and measurabl
 Choose work that repeats, estimate manual effort and failure cost, and include automation maintenance.
 See [the completed planning exercise](automation-exercise.md).
 
-AI suggestions still require review and checks. The person submitting work must understand it and
+Suggested code still requires review and checks. The person submitting work must understand it and
 be able to explain the decisions. Confidence in generated text is not evidence of correctness.
 
 The course calls for a personal Git account, a development workstation, a Linux account on
